@@ -1,0 +1,6 @@
+
+game.playTurn(0,0);
+game.playTurn(0,1);
+game.playTurn(1,1);
+game.playTurn(2,0);
+game.playTurn(2,2);

@@ -75,8 +75,8 @@ function GameBoard(){
 
 function GameController(Player1Name = "Player 1", Player2Name = "Player 2"){
     //Initialize the players
-    const players = [{player: Player1Name,token: "x", value: 1}
-                    ,{player: Player2Name,token: "o", value: -1}];
+    const players = [{player: Player1Name,token: "x", value: 1, wins: 0}
+                    ,{player: Player2Name,token: "o", value: -1, wins: 0}];
     
     //Create the board
     let board = GameBoard();
@@ -227,4 +227,8 @@ function GameController(Player1Name = "Player 1", Player2Name = "Player 2"){
 
 }
 
-const game = GameController();
+function ScreenController(){
+    const game = GameController();
+    
+
+}
