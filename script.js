@@ -229,6 +229,9 @@ function GameController(Player1Name = "Player 1", Player2Name = "Player 2"){
 
 function ScreenController(){
     const game = GameController();
+    const grid = document.querySelector(".game-grid");
+    const turn = document.querySelector("player-turn");
+    const 
     
 
 }
