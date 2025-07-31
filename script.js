@@ -77,7 +77,7 @@ function GameController(Player1Name = "Player 1", Player2Name = "Player 2"){
     //Initialize the players
     const players = [{player: Player1Name,token: "x", value: 1, wins: 0}
                     ,{player: Player2Name,token: "o", value: -1, wins: 0}];
-    
+
     //Create the board
     let board = GameBoard();
     
@@ -228,10 +228,59 @@ function GameController(Player1Name = "Player 1", Player2Name = "Player 2"){
 }
 
 function ScreenController(){
-    const game = GameController();
+    
+    //select elements that the script interacts with
     const grid = document.querySelector(".game-grid");
-    const turn = document.querySelector("player-turn");
-    const 
+    const turn = document.querySelector(".player-turn");
+    const player1Input = document.querySelector("#Player1Name");
+    const player2Input = document.querySelector("#Player2Name");
+    const player1Score = document.querySelector(".player1 .score");
+    const player2Score = document.querySelector(".player2 .score");
+    const restartBtn = document.querySelector("button");
+
     
 
+    const createCellElement = (row,col) =>{ 
+        ele = document.createElement("div");
+        ele.style.backgroundColor = "#9BC09C";
+        ele.dataset.column = col;
+        ele.dataset.row = row;
+        return ele;
+    }
+
+    const displayEmptyGrid = () => {
+        for(let i = 0; i<3; i++){
+            for(let j = 0; j<3; j++){
+                ele = createCellElement(i,j);
+                grid.appendChild(ele);
+            }
+            
+        }
+    }
+
+    displayEmptyGrid();
+
+    //Get player names from input
+    player1Name = player1Input.value || player1Input.placeholder;
+    player2Name = player2Input.value || player2Input.placeholder;
+
+    //crete game instance
+    const game = GameController(player1Name,player2Name);
+
+    //Initial display setup
+    turn.textContent = game.getCurrentPlayer().player;//"test"//
+
+    //Detect clicks on grid
+    grid.addEventListener("click", (e)=>{
+        if(!Array.from(e.target.classList).includes("game-grid")){
+            row = e.target.dataset.row;
+            column = e.target.dataset.column;
+            game.playTurn(row,column);
+        }
+        
+    }
+
+    )
 }
+
+ScreenController();

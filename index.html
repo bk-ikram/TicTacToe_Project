@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
-    <link rel=¨stylesheet¨ type=¨text/css¨ href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="header">
         <h1>Tic Tac Toe</h1>
         <div class="scores">
             <div class="player1">
-                <span class="name"></span>
+                <span class="name">
+                    <input type="text" id="Player1Name" placeholder="Player 1"></input>
+                </span>
                 <span class="token">X</span>
                 <span class="score">0</span>
             </div>
-            <div class="player2"></div>
-            <span class="name"></span>
-            <span class="token">O</span>
-            <span class="score">0</span>
+            <div class="player2">
+                <span class="name">
+                    <input type="text" id="Player2Name" placeholder="Player 2"></input>
+                </span>
+                <span class="token">O</span>
+                <span class="score">0</span>
+            </div>
         </div>
-        <h2 class="player-turn"></h2>
+        <h2 class="player-turn">Test player's turn</h2>
     </div>
     <div class="container">
         <div class="game-grid">
         </div>
     </div>
+    <div class="actions">
+        <button>Restart Game</button>
+    </div>
 </body>
+
 </html>

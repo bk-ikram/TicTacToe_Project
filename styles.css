@@ -1,4 +1,106 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    background-color: #511D43;
+}
 body{
     display: grid;
-    grid-template-areas: 'header' 'container';
+    grid-template-areas: 'header' 'container' 'actions';
+    grid-template-rows: 4fr 14fr 1fr; 
+    background-color: #901E3E;
+    width: 70%;
+    height: calc(100vh - 40px);
+    margin: 20px auto;
+}
+
+h1,h2{
+    text-align: center;
+    color: #9BC09C;
+    padding: 10px;
+}
+.scores{
+    display: flex;
+    padding: 30px 250px;
+    color: white;
+    font-weight: bold;
+}
+
+input{
+    all:unset;
+    width: 100px;
+    text-align: right;
+}
+
+input::placeholder{
+    color:white;
+}
+
+.scores > * {
+    margin: auto;
+    display:flex;
+    gap: 20px;
+}
+
+.container{
+    background-color: #9BC09C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-grid{
+    display: grid;
+    background-color: #456e46;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 9px;
+    height: 90%;
+    aspect-ratio: 1;
+}
+
+
+/* CSS */
+button {
+  background: #456e46;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 10px;
+  padding: 0.5em 0.5em;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  height: 30px;
+  word-break: break-word;
+  border: 0;
+  margin: 5px auto;
+}
+
+button:active,
+button:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+button:hover {
+  border-bottom-style: none;
+  border-color: #dadada;
 }
